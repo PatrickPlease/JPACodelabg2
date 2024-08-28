@@ -10,7 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "users")
+@Table(name = "jpademo")
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto generates the id
