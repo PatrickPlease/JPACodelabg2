@@ -30,28 +30,29 @@ public class PersonDAO implements IDAO<Person> {
     }
 
     @Override
-    public void create(Person user) {
+    public void create(Person person) {
         try (EntityManager em = emf.createEntityManager()){
             em.getTransaction().begin();
-            em.persist(user);
+            em.persist(person);
+            em.getTransaction().commit();
+
+        }
+    }
+
+    @Override
+    public void update(Person person) {
+        try (EntityManager em = emf.createEntityManager()){
+            em.getTransaction().begin();
+            em.merge(person);
             em.getTransaction().commit();
         }
     }
 
     @Override
-    public void update(Person user) {
+    public void delete(Person person) {
         try (EntityManager em = emf.createEntityManager()){
             em.getTransaction().begin();
-            em.merge(user);
-            em.getTransaction().commit();
-        }
-    }
-
-    @Override
-    public void delete(Person user) {
-        try (EntityManager em = emf.createEntityManager()){
-            em.getTransaction().begin();
-            em.remove(user);
+            em.remove(person);
             em.getTransaction().commit();
         }
     }
