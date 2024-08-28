@@ -1,5 +1,6 @@
 package org.example.daos;
 
+import jakarta.persistence.ElementCollection;
 import org.example.entities.Course;
 import org.example.persistence.HibernateConfig;
 import jakarta.persistence.EntityManager;
@@ -10,6 +11,7 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+
 
 public class CourseDAO implements IDAO<Course> {
     private EntityManagerFactory emf = HibernateConfig.getEntityManagerFactory();
@@ -97,6 +99,8 @@ public class CourseDAO implements IDAO<Course> {
         Set<Course> users = courseDAO.getAll();
         System.out.println("All courses:");
         users.forEach(System.out::println);
+
+
 
 
 
