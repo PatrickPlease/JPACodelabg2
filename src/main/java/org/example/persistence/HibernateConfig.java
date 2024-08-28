@@ -38,7 +38,7 @@ public class HibernateConfig {
     private static void getAnnotationConfiguration(Configuration configuration) {
 
         configuration.addAnnotatedClass(Person.class);
-=======
+
         configuration.addAnnotatedClass(Student.class);
 
         configuration.addAnnotatedClass(Course.class);

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -13,6 +15,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @Table(name = "course")
+
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto generates the id
@@ -21,4 +24,6 @@ public class Course {
     private Integer semester;
     private String classroom;
     private LocalTime timeofcourse;
+    @ElementCollection
+    private Set<Integer> courseId=new HashSet<>();
 }
