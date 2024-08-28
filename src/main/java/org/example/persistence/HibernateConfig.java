@@ -36,7 +36,11 @@ public class HibernateConfig {
     }
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
     private static void getAnnotationConfiguration(Configuration configuration) {
+
+        configuration.addAnnotatedClass(Person.class);
+=======
         configuration.addAnnotatedClass(Student.class);
+
         configuration.addAnnotatedClass(Course.class);
     }
 
@@ -72,6 +76,7 @@ public class HibernateConfig {
     private static String getDBName() {
         return "jpademo";
     }
+
     private static Properties setBaseProperties(Properties props){
         props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         props.put("hibernate.connection.driver_class", "org.postgresql.Driver");

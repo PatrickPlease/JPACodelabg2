@@ -3,6 +3,8 @@ package org.example.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalTime;
+
 @Entity
 @Getter
 @Setter
@@ -18,5 +20,5 @@ public class Course {
     private String teacher;
     private Integer semester;
     private String classroom;
-    private String timeofcourse;
+    private LocalTime timeofcourse;
 }

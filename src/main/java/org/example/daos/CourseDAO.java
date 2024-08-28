@@ -6,6 +6,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.TypedQuery;
 
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -56,4 +57,35 @@ public class CourseDAO implements IDAO<Course> {
             em.getTransaction().commit();
         }
     }
+
+    public static void main(String[] args) {
+        //Create course
+        CourseDAO courseDAO = new CourseDAO();
+
+        courseDAO.create(
+                Course.builder()
+                        .teacher("Anna")
+                        .semester(4)
+                        .classroom("classroom2")
+                        .timeofcourse(LocalTime.of(9, 40))
+                        .build()
+        );
+        courseDAO.getAll().forEach(System.out::println);
+
+        //Update courses
+        Course course1 = new Course();
+       course1.setSemester(3);
+       courseDAO.update(course1);
+       System.out.println(course1);
+
+
+        // Delete course
+        course1 = courseDAO.getById(8);
+        courseDAO.delete(course1);
+        System.out.println("User deleted: " + course1);
+
+
+
+    }
+
 }
