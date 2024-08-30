@@ -13,9 +13,9 @@ public class Main {
        StudentDAO studentDAO = new StudentDAO();
 
        //Create new student
-       /* LocalDate bd =LocalDate.of(2024,8,23);
+       LocalDate bd =LocalDate.of(2024,8,23);
 
-        studentdao.create(
+        studentDAO.create(
                 Student.builder()
                         .name("Sandra")
                         .age(29)
@@ -26,7 +26,7 @@ public class Main {
                         .dateofenrollment(LocalDate.now())
                         .build()
         );
-        */
+
 
         //Update student info
 

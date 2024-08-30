@@ -87,13 +87,13 @@ public class CourseDAO implements IDAO<Course> {
          System.out.println("User deleted: " + course1);*/
         
         // Delete course (chat GPT, so u dont have to comment out the delete method (aka our own))
-        course1 = courseDAO.getById(8); // Change the ID to an actual existing course ID
-        if (course1 != null) {
-            courseDAO.delete(course1);
-            System.out.println("Course deleted: " + course1);
-        } else {
-            System.out.println("Course with ID 8 not found for deletion.");
-        }
+//        course1 = courseDAO.getById(8); // Change the ID to an actual existing course ID
+//        if (course1 != null) {
+//            courseDAO.delete(course1);
+//            System.out.println("Course deleted: " + course1);
+//        } else {
+//            System.out.println("Course with ID 8 not found for deletion.");
+//        }
 
         //All courses
         Set<Course> users = courseDAO.getAll();
